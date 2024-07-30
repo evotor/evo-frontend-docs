@@ -14,7 +14,7 @@
 
 ### Структура модуля с Component Store
 
-Реализация паттерна должна состоять из двух файлов:
+Реализация паттерна должна состоять из двух файлов, которые находятся в папке `+state`:
 
 * foo.store.ts
 * foo.facade.ts
@@ -28,13 +28,15 @@
 ```
 /modules
   /foo
+    /+state
+      foo.store.ts
+      foo.facade.ts
     /pages
       /foo-page
         foo-page.component.ts
         ...
     /services
-      foo.store.ts
-      foo.facade.ts
+      foo.service.ts
       ...
     foo.module.ts
     ...
