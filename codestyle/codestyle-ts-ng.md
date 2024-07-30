@@ -1,4 +1,4 @@
-# Evo Frontend Codestyle: Typescript & Angular
+# Typescript & Angular
 
 ## Предисловие
 
