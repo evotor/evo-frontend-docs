@@ -1,3 +1,5 @@
 # evo-frontend-docs
 
-[Typescript &amp; Angular](./codestyle/codestyle-ts-ng.md)
+* [Введение](./codestyle/intro.md)
+* [Typescript &amp; Angular](./codestyle/codestyle-ts-ng.md)
+* [Component Store](./codestyle/component-store.md)
