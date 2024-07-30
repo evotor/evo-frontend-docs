@@ -1,4 +1,4 @@
-# Evo Frontend Codestyle: Введение
+# Введение
 
 ## Термины
 
