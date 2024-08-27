@@ -30,7 +30,7 @@
 ```
 const characteristics: Array<Characteristic> = []; // плохо
 
-const characteristicsList: Array<Characteristic> = []; // ok
+const characteristicsList: Array<Characteristic> = []; // хорошо
 ```
 
 ### Количество, счётчики, индексы и номера
@@ -40,9 +40,9 @@ const characteristicsList: Array<Characteristic> = []; // ok
 `<существительное во множественном числе> + Count`
 
 ```
-retriesCount = 0; // ok
-basketItemsCount = 0; // ok
-totalItemsCount = 0; // ok
+retriesCount = 0; // хорошо
+basketItemsCount = 0; // хорошо
+totalItemsCount = 0; // хорошо
 ```
 
 Для индексов используем маску: 
@@ -50,7 +50,7 @@ totalItemsCount = 0; // ok
 `<существительное в единственном числе> + Index`
 
 ```
-itemIndex = 0; // ок
+itemIndex = 0; // хорошо
 pageNumber = 0; // некорректно, так как имеет значение 0
 
 ordersNumber = 100; // плохо
@@ -68,7 +68,37 @@ orderNumber = 0; // допускается, но стоит учитывать, 
 Для обозначения минимума и максимума используем префиксы `min` и  `max`, соответственно. 
 
 ```
-const minDate;
-const maxRetriesCount;
+const minDate; // хорошо
+const maxRetriesCount; // хорошо
 ```
 
+### Мапы и хэши
+
+Типы данных, которые формируют маппинг или хэш, СЛЕДУЕТ называть соответствующим образом:
+
+- для группировки списков сущностей по какому-либо признаку:
+
+  `<сущность во множественном числе>By<признак в единственном числе>Map`
+
+  Примеры:
+
+  ```
+  type ProductCharacteristics = Record<ProductCharacteristicType, ProductCharacteristic[]>; // плохо
+  
+  type ProductCharacteristicsByTypeMap = Record<ProductCharacteristicType, ProductCharacteristic[]>; // хорошо
+  ```
+  
+- для маппинга сущностей 1 к 1 (например, по идентификатору): постфикс `Map` (ДОПУСКАЕТСЯ также постфикс `Hash`)
+
+  ```
+  <сущность во множественном числе>Map
+  <сущность во множественном числе>Hash
+  ```
+
+  Примеры:
+
+  ```
+  type CatalogItems = Record<CatalogItem['id'], CatalogItem>; // плохо
+  
+  type CatalogItemsHash = Record<CatalogItem['id'], CatalogItem>; // хорошо
+  ```
